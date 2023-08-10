@@ -15,15 +15,16 @@
           margin: 0;
           padding: 0;
       }
-/* 
+
       .container {
           max-width: 600px;
+          width:500px;
           margin: 50px auto;
           padding: 20px;
           background-color: #fff;
           box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
           border-radius: 5px;
-      } */
+      }
 
       .form-group {
           margin-bottom: 20px;
@@ -75,14 +76,7 @@
         <h3 id="about"><a href="{% url 'about_us' %}">About</a></h3>
       </div>
     </div>
-
-  <div id="maindiv">
-    {% for i in data_review %}
-      <div id="tb1">
-        <p id="text">{{ i.name  | safe}}</p>
-        <p id="reviews">{{ i.message  | safe}}</p> 
-      </div>
-    {% endfor %} 
+    
     <div class="container">
       <h1>Suggestion Form</h1>
       <form method="post">
@@ -102,6 +96,15 @@
           <input type="submit" value="Submit">
       </form>
   </div>
+
+  <div id="maindiv">
+    {% for i in data_review %}
+      <div id="tb1">
+        <p id="text">{{ i.name  | safe}}</p>
+        <p id="reviews">{{ i.message  | safe}}</p> 
+      </div>
+    {% endfor %} 
+    
     <!-- <h1>Suggestion Form</h1>
     <form method="post">
         {% csrf_token %}
