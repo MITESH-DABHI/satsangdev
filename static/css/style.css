@@ -602,6 +602,7 @@ img#cross {
 }
 
 .post_list img {
+    padding-bottom: 40px;
     width: 100%;
     object-fit: contain;
     min-height: 220px;
