@@ -30,7 +30,7 @@
   <div class='post_data_list_wrp'>
     {% for i in data %}
       <div class="post_list">
-        {{ i.title  | safe}} 
+        {% comment %} {{ i.title  | safe}}  {% endcomment %}
         <img src="{{i.image_file.url}}" alt="" id="img1" />
       </div>
     {% endfor %} 

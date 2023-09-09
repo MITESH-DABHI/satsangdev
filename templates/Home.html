@@ -49,7 +49,7 @@
     </div>
   </div>
 
-  <img src="{% static 'assets/images/banner_image.png' %}" alt="Loading.." id="img3">
+  {% comment %} <img src="{% static 'assets/images/banner_image.png' %}" alt="Loading.." id="img3"> {% endcomment %}
   <h1 id="text3">Virtual Satsangs</h1>
   <h3 id="text4">Shree Krushna is considered tobe a bero, role model,
     teacher, philosopher and true friend who is seen as the
@@ -58,6 +58,14 @@
   <div id="block3">
     <h1 id="text5">Gallery</h1>
     <div id="innerblock">
+      {% for i in data %}
+        <div class="image-card">
+          {% comment %} <b id="text">{{ i.name  | safe}}</b> {% endcomment %}
+          <img id="inimg1" src="{{i.image_file.url}}" alt="Loading.."> 
+        </div>
+      {% endfor %}
+    </div>
+    {% comment %} <div id="innerblock">
       <div class="image-card">
         <img id="inimg1" src="{% static 'assets/images/img_1.jpg' %}" alt="Loading..">
       </div>
@@ -70,11 +78,22 @@
       <div class="image-card"><img id="inimg7" src="{% static 'assets/images/img_8.jpg' %}" alt="Loading.."></div>
       <div class="image-card"><img id="inimg7" src="{% static 'assets/images/img_9.jpg' %}" alt="Loading.."></div>
       <div class="image-card"><img id="inimg7" src="{% static 'assets/images/img_10.jpg' %}" alt="Loading.."></div>
-    </div>
+    </div> {% endcomment %}
   </div>
   <div>
     <h1 id="text6">Customer Suggestions</h1>
     <div class=" owl-carousel owl-theme">
+      {% for i in data_review %}
+        <div id="inblock1" class="reviewBlog">
+          {% comment %} <b id="text">{{ i.name  | safe}}</b> {% endcomment %}
+          <p id="reviews">{{ i.suggestion  | safe}}
+            <br><br><b>- {{ i.name  | safe}}</b>
+          </p> 
+        </div>
+      {% endfor %} 
+
+    </div>
+    {% comment %} <div class=" owl-carousel owl-theme">
       <div id="inblock1" class="reviewBlog">
         <p>I would appreciate it very and will send you Nyochhawar too... as you are doing a great Sewa Karya which is
           commendable.. these days you can't find people with this great attitude.<br><br><b>- Jyoti Shah</b></p>
@@ -93,7 +112,7 @@
         <p>Hello Sejal, One of our friends was interested in joining. I have shared your link with them. Their names are
           Yashwant Parekh and Padma Parekh.<br><br><b>- Saryu Shukla</b></p>
       </div>
-    </div>
+    </div> {% endcomment %}
   </div>
   <div id="block4" class="container">
     <div id="innerblock2" class="row">

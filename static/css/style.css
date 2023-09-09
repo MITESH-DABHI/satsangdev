@@ -602,11 +602,11 @@ img#cross {
 }
 
 .post_list img {
-    padding-bottom: 40px;
+    /* padding-bottom: 40px; */
     width: 100%;
     object-fit: contain;
     min-height: 220px;
-    max-height: 220px;
+    max-height: 390px;
 }
 
 .post_list {
@@ -636,6 +636,7 @@ span#vt1 p {
 }
 
 .post_data_list_wrp .post_list {
+    padding: 1rem 1rem;
     display: flex;
     justify-content: center;
     flex-direction: column;
@@ -645,7 +646,7 @@ span#vt1 p {
     box-shadow: 3px 3px 12px #00000029;
     border-radius: 14px;
     opacity: 1;
-    width: 390px;
+    /* width: 390px; */
 }
 
 .post_data_list_wrp {

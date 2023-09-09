@@ -9,7 +9,9 @@ from django.contrib import messages
 # Create your views here.
 
 def index(request):
-    return render(request, 'Home.html')
+    data_review = Suggestion.objects.all()
+    data = UploadGallery.objects.all()
+    return render(request, 'Home.html',{'data_review' : data_review,'data':data})
 
 def yoga_videos(request):
     data = UploadVideo.objects.all()
